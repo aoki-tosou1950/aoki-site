@@ -215,8 +215,7 @@ iframe {
 body {
   word-break: keep-all; /* 不自然な日本語の折り返しを防止 */
   letter-spacing: 0.03em; /* 字間をほんの少し広げて読みやすく */
-  line-height: 1.8; /* 行間を少し広めに */
-}
-body {
+  line-height: 1.8; /* 行間をゆったりに */
   font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
 }
+
