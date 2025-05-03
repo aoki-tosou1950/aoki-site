@@ -177,3 +177,33 @@ img, iframe {
   max-width: 100%;
   height: auto;
 }
+/* モバイルでの画面幅調整（ナビゲーションなど） */
+nav ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+nav ul li {
+  font-size: 14px;
+}
+
+@media (max-width: 600px) {
+  h1, h2, h3, p, li {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul li {
+    margin: 5px 0;
+  }
+}
