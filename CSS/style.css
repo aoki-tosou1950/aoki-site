@@ -192,6 +192,14 @@ nav ul li {
 }
 
 @media (max-width: 600px) {
+  p {
+    max-width: 90%;
+    margin: 0 auto;
+    font-size: 15px;       /* ← 追加: フォントサイズ微調整 */
+    line-height: 1.8;      /* ← 追加: 行間広めで読みやすく */
+  }
+}
+ {
   h1, h2, h3, p, li {
     font-size: 15px;
     line-height: 1.6;
