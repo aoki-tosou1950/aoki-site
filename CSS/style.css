@@ -166,3 +166,14 @@ body {
   font-size: 1.1em;
   color: #555;
 }
+body {
+  word-break: break-word;
+  overflow-wrap: break-word;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+img, iframe {
+  max-width: 100%;
+  height: auto;
+}
