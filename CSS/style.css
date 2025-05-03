@@ -167,7 +167,6 @@ body {
   color: #555;
 }
 body {
-  word-break: break-word;
   overflow-wrap: break-word;
   font-size: 16px;
   line-height: 1.6;
@@ -206,4 +205,10 @@ nav ul li {
   nav ul li {
     margin: 5px 0;
   }
+}
+iframe {
+  width: 100%;
+  height: 40vh;
+  max-height: 500px;
+  min-height: 300px;
 }
