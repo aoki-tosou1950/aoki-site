@@ -266,4 +266,27 @@ h3 {
     font-size: 1.6rem; /* 16px */
   }
 }
+@media (max-width: 768px) {
+  body {
+    font-size: 1.4rem;  /* スマホではやや小さめに */
+    line-height: 1.6;   /* 少しゆったりと */
+  }
+
+  h1 {
+    font-size: 2rem;    /* 20px */
+  }
+
+  h2 {
+    font-size: 1.6rem;  /* 16px */
+  }
+
+  h3 {
+    font-size: 1.4rem;  /* 14px */
+  }
+
+  p, li {
+    font-size: 1.4rem;
+    line-height: 1.8;
+  }
+}
 
