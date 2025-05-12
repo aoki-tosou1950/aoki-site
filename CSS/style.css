@@ -226,4 +226,44 @@ body {
   line-height: 1.8; /* 行間をゆったりに */
   font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
 }
+html {
+  font-size: 62.5%; /* 1rem = 10px */
+}
+body {
+  font-size: 1.6rem; /* 16px */
+  line-height: 1.5;  /* 行間を1.5倍に設定 */
+  font-family: 'Noto Sans JP', sans-serif;
+  color: #333;
+}
+h1 {
+  font-size: 2.4rem; /* 24px */
+  margin-bottom: 1.2rem;
+}
+
+h2 {
+  font-size: 2.0rem; /* 20px */
+  margin-bottom: 1.0rem;
+}
+
+h3 {
+  font-size: 1.8rem; /* 18px */
+  margin-bottom: 0.8rem;
+}
+@media screen and (max-width: 600px) {
+  body {
+    font-size: 1.4rem; /* 14px */
+  }
+
+  h1 {
+    font-size: 2.0rem; /* 20px */
+  }
+
+  h2 {
+    font-size: 1.8rem; /* 18px */
+  }
+
+  h3 {
+    font-size: 1.6rem; /* 16px */
+  }
+}
 
