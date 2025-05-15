@@ -263,6 +263,109 @@ h3 {
     max-height: 200px;
     object-fit: cover;
   }
-     
+     /* ハンバーガーボタン：PCでは非表示 */
+.nav-toggle {
+  display: none;
+  font-size: 2.4rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* メニューのスタイル共通 */
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  padding-left: 0;
+}
+
+/* スマホ用の切り替え表示 */
+@media screen and (max-width: 768px) {
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    background: #fff;
+    padding: 1rem;
+    position: absolute;
+    right: 1rem;
+    top: 60px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    z-index: 100;
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+
+  .nav-toggle {
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 110;
+  }
+
+  .nav {
+    position: relative;
+  }
+}
+/* ハンバーガーメニュー：共通スタイル */
+.nav-toggle {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 1rem;
+}
+
+.nav-menu ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-menu li {
+  margin: 0 1rem;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+/* スマホ対応：ハンバーガーメニュー表示 */
+@media screen and (max-width: 768px) {
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    background-color: #fff;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+
+  .nav-menu ul {
+    flex-direction: column;
+  }
+
+  .nav-menu li {
+    margin: 1rem 0;
+    text-align: center;
+  }
+}
+
   
 
