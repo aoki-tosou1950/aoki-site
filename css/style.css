@@ -5,7 +5,7 @@ body {
   line-height: 1.6;
   margin: 0;
   padding: 0;
-  word-break: break-word; /* ← 改行の違和感を軽減 */
+  word-break: break-word;
 }
 
 header {
@@ -65,7 +65,7 @@ footer {
   color: #555;
 }
 
-/* ハンバーガーメニュー調整 */
+/* ハンバーガーメニュー */
 .nav-toggle {
   background: none;
   border: none;
@@ -78,16 +78,22 @@ footer {
   z-index: 1000;
 }
 
+/* ナビメニュー本体：初期状態では非表示 */
 .nav-menu {
   display: none;
-  padding: 10px;
+  background-color: #ecf0f1;
+  position: absolute;
+  top: 64px;
+  left: 0;
+  width: 100%;
+  z-index: 999;
 }
 
 .nav-menu.active {
   display: block;
 }
 
-/* スマホ用レイアウト調整 */
+/* モバイルレイアウト */
 @media screen and (max-width: 768px) {
   body {
     font-size: 17px;
