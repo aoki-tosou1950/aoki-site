@@ -114,3 +114,18 @@ h2 {
   height: auto;
   display: block;
 }
+.line-banner {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 120px;
+  z-index: 9999;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.line-banner img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
