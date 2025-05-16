@@ -24,7 +24,7 @@ header h1 {
   font-size: 1.5rem;
 }
 
-/* ナビゲーション */
+/* ハンバーガーアイコン */
 .nav-toggle {
   position: absolute;
   left: 1rem;
@@ -54,9 +54,9 @@ h2 {
   right: 20px;
   width: 140px;
   height: auto;
-  z-index: 10000;
+  z-index: 9999;
   display: block;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
   border-radius: 8px;
 }
 
@@ -64,9 +64,21 @@ h2 {
 @media (max-width: 600px) {
   .line-banner {
     width: 120px;
-    right: 10px;
     bottom: 15px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    right: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+  }
+
+  header h1 {
+    font-size: 1.2rem;
+  }
+
+  main {
+    padding: 0.5rem;
+  }
+
+  h2 {
+    font-size: 1.1rem;
   }
 }
 
@@ -77,6 +89,7 @@ footer {
   text-align: center;
   padding: 1rem;
   font-size: 0.9rem;
+  margin-top: 2rem;
 }
 
 /* リンク */
