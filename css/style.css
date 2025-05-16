@@ -73,3 +73,14 @@ h2 {
     padding: 100px 16px 40px;
   }
 }
+.main-visual {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.main-visual img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
