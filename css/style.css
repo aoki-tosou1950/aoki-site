@@ -17,12 +17,14 @@ header {
   padding: 1rem 0;
   text-align: center;
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
-/* ハンバーガーメニュー */
+header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+/* ナビゲーション */
 .nav-toggle {
   position: absolute;
   left: 1rem;
@@ -30,14 +32,6 @@ header {
   transform: translateY(-50%);
   font-size: 1.5rem;
   cursor: pointer;
-  z-index: 1100;
-}
-
-/* ヘッダータイトル */
-header h1 {
-  margin: 0;
-  font-size: 1.5rem;
-  text-align: center;
 }
 
 /* メインコンテンツ */
@@ -58,14 +52,25 @@ h2 {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  width: 120px;
+  width: 140px;
   height: auto;
   z-index: 1000;
   display: block;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  border-radius: 12px;
-  background-color: white;
-  padding: 2px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  object-fit: contain;
+}
+
+/* スマホ対応 */
+@media (max-width: 600px) {
+  .line-banner {
+    width: 120px;
+    right: 10px;
+    bottom: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    object-fit: contain;
+  }
 }
 
 /* フッター */
@@ -87,41 +92,14 @@ a:hover {
   text-decoration: underline;
 }
 
-/* 画像全般のレスポンシブ対応 */
+/* img全般のレスポンシブ対応 */
 img {
   max-width: 100%;
   height: auto;
   display: block;
 }
 
-/* LINEバナー画像だけ、余白対策用にfit-content */
-.line-banner img {
-  display: block;
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-}
-
 /* 強調 */
 strong {
   font-weight: bold;
-}
-
-/* スマホ対応 */
-@media (max-width: 600px) {
-  .line-banner {
-    width: 100px;
-    right: 10px;
-    bottom: 10px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
-    border-radius: 8px;
-  }
-
-  header h1 {
-    font-size: 1.2rem;
-  }
-
-  main {
-    padding: 0.75rem;
-  }
 }
