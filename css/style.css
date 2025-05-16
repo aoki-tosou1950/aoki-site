@@ -84,3 +84,28 @@ h2 {
   height: auto;
   display: block;
 }
+/* 全体の横スクロール防止 */
+html, body {
+  overflow-x: hidden;
+}
+
+/* メインビジュアル画像がはみ出さないように */
+.main-visual img {
+  width: 100%;
+  max-width: 100vw;
+  height: auto;
+  display: block;
+}
+
+/* ヘッダー内のナビ要素のはみ出し防止 */
+header {
+  box-sizing: border-box;
+  padding: 16px;
+  max-width: 100vw;
+}
+
+/* ハンバーガーメニュー調整 */
+.nav-toggle {
+  right: 16px;  /* ← left じゃなく right にすることではみ出し防止 */
+  left: auto;
+}
