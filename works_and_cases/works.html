@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>施工事例一覧 - 有限会社青木塗装工業</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    body { font-family: sans-serif; padding: 1rem; background-color: #f9f9f9; }
+    h1 { text-align: center; color: #333; margin-bottom: 2rem; }
+    .works-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+    }
+    .works-card {
+      width: 100%;
+      max-width: 350px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      background-color: #fff;
+    }
+    .works-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .works-card h3 {
+      margin: 0.5rem;
+      font-size: 1rem;
+      color: #222;
+    }
+    .tag-container {
+      margin: 0.5rem;
+    }
+    .tag {
+      background-color: #1db16e;
+      color: #fff;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      margin-right: 4px;
+      display: inline-block;
+    }
+    .detail-link {
+      margin: 0.5rem;
+      display: inline-block;
+      color: #1db16e;
+      text-decoration: underline;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>施工事例一覧</h1>
+  <div class="works-grid">
+    <div class="works-card">
+      <img src="../images/case001/case001_after.jpg" alt="M様邸 外壁・屋根塗装（別府市）">
+      <h3>M様邸 外壁・屋根塗装（別府市）</h3>
+      <div class="tag-container">
+        <span class="tag">外壁塗装</span>
+        <span class="tag">屋根塗装</span>
+      </div>
+      <a class="detail-link" href="case001.html">→ 詳細を見る</a>
+    </div>
+    <div class="works-card">
+      <img src="../images/case002/case002_after.jpg" alt="K様邸 外壁塗装（大分市）">
+      <h3>K様邸 外壁塗装（大分市）</h3>
+      <div class="tag-container">
+        <span class="tag">外壁塗装</span>
+      </div>
+      <a class="detail-link" href="case002.html">→ 詳細を見る</a>
+    </div>
+    <div class="works-card">
+      <img src="../images/case003/case003_after.jpg" alt="S様邸 外壁塗装（日出町）">
+      <h3>S様邸 外壁塗装（日出町）</h3>
+      <div class="tag-container">
+        <span class="tag">外壁塗装</span>
+      </div>
+      <a class="detail-link" href="case003.html">→ 詳細を見る</a>
+    </div>
+  </div>
+</body>
+</html>
