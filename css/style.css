@@ -146,13 +146,13 @@ strong {
   height: auto;
 }
 
-@media (max-width: 600px) {
-  .line-banner {
-    width: 120px;
-    bottom: 15px;
-    right: 10px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+@media (max-width: 767px) {
+  .images img {
+    display: block;
+    width: 100% !important;
+    height: auto !important;
   }
+}
 
   header h1 {
     font-size: 1.2rem;
