@@ -121,7 +121,31 @@ strong {
   border-radius: 8px;
 }
 
-/* スマホ対応 */
+/* パンくずリスト追加 */
+.breadcrumb {
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.breadcrumb a {
+  color: #1db16e;
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb span {
+  color: #555;
+}
+
+/* スマホ用画像サイズ調整（詳細ページ用） */
+.images img {
+  width: 100%;
+  height: auto;
+}
+
 @media (max-width: 600px) {
   .line-banner {
     width: 120px;
@@ -144,5 +168,11 @@ strong {
 
   .nav-menu {
     font-size: 1rem;
+  }
+
+  /* スマホ画像拡大対応 */
+  .images img {
+    max-width: 100%;
+    height: auto;
   }
 }
