@@ -8,6 +8,7 @@ body {
   background-color: #fff;
   overscroll-behavior: none;
   touch-action: manipulation;
+  padding-bottom: 60px; /* フッター固定の余白確保 */
 }
 
 /* ヘッダー */
@@ -77,14 +78,16 @@ h2 {
   margin-top: 2rem;
 }
 
-/* フッター */
+/* フッター（固定） */
 footer {
   background-color: #2c3e50;
   color: white;
   text-align: center;
-  padding: 1rem;
+  padding: 10px;
   font-size: 0.9rem;
-  margin-top: 2rem;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 
 /* リンク */
@@ -108,17 +111,23 @@ strong {
   font-weight: bold;
 }
 
-/* LINEバナー */
-.line-banner {
+/* LINE固定バナー */
+.fixed-banner {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 140px;
-  height: auto;
-  z-index: 9999;
-  display: block;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  border-radius: 8px;
+  bottom: 60px; /* フッター上 */
+  right: 10px;
+  background-color: #00B900;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 50px;
+  text-align: center;
+  z-index: 1000;
+  font-size: 14px;
+}
+
+.fixed-banner a {
+  color: white;
+  text-decoration: none;
 }
 
 /* パンくずリスト追加 */
@@ -152,7 +161,6 @@ strong {
     width: 100% !important;
     height: auto !important;
   }
-}
 
   header h1 {
     font-size: 1.2rem;
@@ -168,11 +176,5 @@ strong {
 
   .nav-menu {
     font-size: 1rem;
-  }
-
-  /* スマホ画像拡大対応 */
-  .images img {
-    max-width: 100%;
-    height: auto;
   }
 }
