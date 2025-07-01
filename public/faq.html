@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ご質問事項フォーム</title>
+</head>
+<body>
+  <h2>ご質問事項フォーム</h2>
+  
+  <form id="faqForm">
+    <label>お名前：</label><br>
+    <input type="text" name="name" required><br><br>
+
+    <label>ご質問内容（選択）：</label><br>
+    <select name="faq" required>
+      <option value="">選択してください</option>
+      <option>小さな作業も頼めますか？</option>
+      <option>見積もりだけでも大丈夫ですか？</option>
+      <option>施工後のアフターフォローはありますか？</option>
+      <option>公式LINEで相談できるって本当ですか？</option>
+      <option>塗装や防水工事の有資格者はおるんかえ？</option>
+      <option>どんなに偉そうな資格を謳っても問題が出る事もあるんやないん？</option>
+      <option>もっと有名なとこに頼んだ方が安心やけん青木さんには頼めんなあ？</option>
+      <option>なんで青木さんは適正価格が実現できるん？</option>
+      <option>（その他・自由記述へ）</option>
+    </select><br><br>
+
+    <label>ご自由にご記入ください：</label><br>
+    <textarea name="detail" rows="4" cols="40" placeholder="ご質問内容の補足などあればご記入ください"></textarea><br><br>
+
+    <button type="submit">送信</button>
+  </form>
+
+  <!-- Firebase連携 -->
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+  <script>
+    const firebaseConfig = {
+  apiKey: "AIzaSyCBjIzKGD53IwbOz4rZLI7E6D0bfzsP04g",
+  authDomain: "aokitosou-miniapp.firebaseapp.com",
+  projectId: "aokitosou-miniapp",
+  storageBucket: "aokitosou-miniapp.appspot.com", // ←ここを修正！
+  messagingSenderId: "546067044990",
+  appId: "1:546067044990:web:0aa0f5b36517cd7205962f"
+};
+
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+
+    document.getElementById('faqForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const form = e.target;
+      const name = form.name.value;
+      const faq = form.faq.value;
+      const detail = form.detail.value;
+
+      db.collection("faq_questions").add({
+        name,
+        faq,
+        detail,
+        submittedAt: new Date()
+      }).then(() => {
+        alert("送信が完了しました！");
+        form.reset();
+      }).catch((error) => {
+        alert("エラーが発生しました：" + error);
+      });
+    });
+  </script>
+</body>
+</html>

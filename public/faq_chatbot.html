@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>よくあるご質問</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    h1 { color: #333; }
+    .question { margin: 10px 0; }
+    .answer { display: none; margin: 5px 0 15px 20px; color: #555; }
+    button { width: 100%; padding: 10px; font-size: 16px; margin: 5px 0; cursor: pointer; background: #4CAF50; color: white; border: none; border-radius: 5px; }
+    button:hover { background: #45a049; }
+  </style>
+</head>
+<body>
+
+<h1>よくあるご質問</h1>
+
+<div class="question">
+  <button onclick="toggleAnswer('a1')">小さな作業も頼めますか？</button>
+  <div id="a1" class="answer">はい、小さな作業でも喜んでお受けしております！網戸張替えや高圧洗浄、草刈りなどもお気軽にどうぞ！</div>
+</div>
+
+<div class="question">
+  <button onclick="toggleAnswer('a2')">見積もり依頼や現地調査の依頼はどこからすれば良いですか？</button>
+  <div id="a2" class="answer">この公式LINEからお願いします。もしくはお電話番号097-594-0076でも24時間365日お伺いしております！</div>
+</div>
+
+<div class="question">
+  <button onclick="toggleAnswer('a3')">施工後のアフターフォローはありますか？</button>
+  <div id="a3" class="answer">はい、施工後も定期的なご連絡や点検を心がけています。何か不具合があればすぐご相談ください！</div>
+</div>
+
+<div class="question">
+  <button onclick="toggleAnswer('a4')">公式LINEで相談できるって本当ですか？</button>
+  <div id="a4" class="answer">本当です！公式LINEから24時間受付しております。確認後、担当よりご連絡差し上げます！</div>
+</div>
+
+<div class="question">
+  <button onclick="toggleAnswer('a5')">塗装や防水工事に資格者はいますか？</button>
+  <div id="a5" class="answer">はい、1級建築施工管理技士・1級塗装技能士・監理技術者が在籍しておりますのでご安心ください！</div>
+</div>
+
+<div class="question">
+  <button onclick="toggleAnswer('a6')">資格や知識があれば良いってもんじゃないでしょ？</button>
+  <div id="a6" class="answer">おっしゃるとおりです！1億円までの損害賠償保険、労災保険、労災保険特別加入にも加入済みです。安心してご依頼下さい！</div>
+</div>
+
+<div class="question">
+  <button onclick="toggleAnswer('a7')">有名な会社に頼んだ方が安心なんじゃ？</button>
+  <div id="a7" class="answer">知名度より「誠実な対応」と「適正価格」で選ばれています。地域密着46年の実績があります！</div>
+</div>
+
+<div class="question">
+  <button onclick="toggleAnswer('a8')">なんで適正価格が実現できるの？</button>
+  <div id="a8" class="answer">自社施工体制だから中間マージンなし！施工品質とコストバランスに自信ありです！</div>
+</div>
+
+<script>
+function toggleAnswer(id) {
+  var x = document.getElementById(id);
+  if (x.style.display === "none" || x.style.display === "") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+</script>
+
+</body>
+</html>

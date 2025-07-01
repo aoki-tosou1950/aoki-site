@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>その他のご依頼</title>
+
+  <!-- Firebase SDK 読み込み -->
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyCBjIzKGD53IwbOz4rZLI7E6D0bfzsP04g",
+      authDomain: "aokitosou-miniapp.firebaseapp.com",
+      projectId: "aokitosou-miniapp",
+      storageBucket: "aokitosou-miniapp.appspot.com",
+      messagingSenderId: "546067044990",
+      appId: "1:546067044990:web:0aa0f5b36517cd7205962f"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+  </script>
+</head>
+<body>
+  <h2>その他のご依頼フォーム</h2>
+  <form id="otherForm">
+    <label>お名前：</label><br/>
+    <input type="text" name="name" required><br/><br/>
+
+    <label>ご住所（市町村）：</label><br/>
+    <select name="city" required>
+      <option value="">選択してください</option>
+      <option>大分市</option>
+      <option>別府市</option>
+      <option>中津市</option>
+      <option>日田市</option>
+      <option>佐伯市</option>
+      <option>臼杵市</option>
+      <option>津久見市</option>
+      <option>竹田市</option>
+      <option>豊後高田市</option>
+      <option>杵築市</option>
+      <option>宇佐市</option>
+      <option>豊後大野市</option>
+      <option>由布市</option>
+      <option>国東市</option>
+      <option>姫島村</option>
+      <option>日出町</option>
+      <option>九重町</option>
+      <option>玖珠町</option>
+    </select><br/><br/>
+
+    <label>第1希望日：</label><br/>
+    <input type="date" name="date1"> <input type="time" name="time1"><br/><br/>
+
+    <label>第2希望日：</label><br/>
+    <input type="date" name="date2"> <input type="time" name="time2"><br/><br/>
+
+    <label>第3希望日：</label><br/>
+    <input type="date" name="date3"> <input type="time" name="time3"><br/><br/>
+
+    <label>ご依頼内容：</label><br/>
+    <input type="checkbox" name="work" value="網戸張替え"> 網戸張替え<br/>
+    <input type="checkbox" name="work" value="高圧洗浄"> 高圧洗浄<br/>
+    <input type="checkbox" name="work" value="草刈り"> 草刈り<br/>
+    <input type="checkbox" name="work" value="その他"> その他<br/>
+    <textarea name="detail" placeholder="その他のご依頼があればご記入ください" rows="4" cols="40"></textarea><br/><br/>
+
+    <button type="submit">送信</button>
+  </form>
+
+  <script>
+    document.getElementById('otherForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const form = e.target;
+      const name = form.name.value;
+      const city = form.city.value;
+      const date1 = form.date1.value;
+      const time1 = form.time1.value;
+      const date2 = form.date2.value;
+      const time2 = form.time2.value;
+      const date3 = form.date3.value;
+      const time3 = form.time3.value;
+
+      const works = [];
+      form.querySelectorAll('input[name="work"]:checked').forEach(cb => {
+        works.push(cb.value);
+      });
+      const detail = form.detail.value;
+
+      db.collection("other_inquiries").add({
+        name,
+        city,
+        date1,
+        time1,
+        date2,
+        time2,
+        date3,
+        time3,
+        works,
+        detail,
+        submittedAt: new Date()
+      }).then(() => {
+        alert("送信が完了しました！");
+        form.reset();
+      }).catch((error) => {
+        alert("エラーが発生しました：" + error);
+      });
+    });
+  </script>
+</body>
+</html>
