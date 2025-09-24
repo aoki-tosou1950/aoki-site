@@ -15,8 +15,7 @@ const db  = getFirestore(app);
 
 const params   = new URLSearchParams(location.search);
 const srcParam = params.get('src') || null;
-
-const $ = sel => document.querySelector(sel);
+const $ = s => document.querySelector(s);
 
 window.addEventListener('DOMContentLoaded', () => {
   const form   = $('#survey-form');
@@ -35,6 +34,12 @@ window.addEventListener('DOMContentLoaded', () => {
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
+    // 送信中UI
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.textContent = '送信中…';
+    }
+
     const payload = Object.fromEntries(new FormData(form).entries());
 
     try {
@@ -46,11 +51,14 @@ window.addEventListener('DOMContentLoaded', () => {
         createdAt: serverTimestamp()
       });
 
+      // 画面にも通知＋明確なアラート
       show('送信しました。折り返しご連絡いたします。', true);
+      alert('送信完了しました。折り返しご連絡いたします。');
       form.reset();
     } catch (err) {
       console.error('[miniapp] Firestore error', err);
       show('送信に失敗しました。時間をおいて再度お試しください。', false);
+      alert('送信に失敗しました。時間をおいて再度お試しください。');
     } finally {
       if (submitBtn) {
         submitBtn.disabled = false;
