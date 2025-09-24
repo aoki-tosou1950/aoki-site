@@ -51,23 +51,27 @@
 <body>
   <h1>現地調査のご依頼</h1>
   <form id="survey-form">
-    <label>お名前：
-      <input type="text" name="name" required />
-    </label>
-    <label>ご住所：
-      <input type="text" name="address" required />
-    </label>
-    <label>希望日時：
-      <input type="datetime-local" name="datetime" required />
-    </label>
-    <label>電話番号：
-      <input type="tel" name="phone" />
-    </label>
-    <label>ご要望・補足：
-      <textarea name="message" rows="4"></textarea>
-    </label>
-    <button type="submit">送信する</button>
-  </form>
-<script type="module" src="./miniapp-submit.js?v=3"></script>
+  <label>お名前：
+    <input type="text" name="name" required />
+  </label>
+  <label>ご住所：
+    <input type="text" name="address" required />
+  </label>
+  <label>希望日時：
+    <input type="datetime-local" name="datetime" required />
+  </label>
+  <label>電話番号：
+    <input type="tel" name="phone" />
+  </label>
+  <label>ご要望・補足：
+    <textarea name="message" rows="4"></textarea>
+  </label>
+  <button type="submit">送信する</button>
+</form>
+
+<!-- ←ここを必ず追加 -->
+<div id="notice" class="notice" style="display:none;"></div>
+
+<script type="module" src="./js/miniapp-submit.js?v=5"></script>
 </body>
 </html>
