@@ -54,24 +54,32 @@
   <label>お名前：
     <input type="text" name="name" required />
   </label>
+
   <label>ご住所：
     <input type="text" name="address" required />
   </label>
+
   <label>希望日時：
     <input type="datetime-local" name="datetime" required />
   </label>
+
   <label>電話番号：
-    <input type="tel" name="phone" />
+    <!-- 数字のみ 9〜13桁を許可。ハイフンは不要に統一 -->
+    <input type="tel" name="phone" inputmode="numeric" pattern="^\d{9,13}$" required />
   </label>
+
   <label>ご要望・補足：
-    <textarea name="message" rows="4"></textarea>
+    <!-- 5文字以上を必須にして空送信を防止 -->
+    <textarea name="message" rows="4" minlength="5" required></textarea>
   </label>
+
   <button type="submit">送信する</button>
 </form>
 
-<!-- ←ここを必ず追加 -->
+<!-- 送信結果の表示枠（既にあれば重複不要） -->
 <div id="notice" class="notice" style="display:none;"></div>
 
-<script type="module" src="./js/miniapp-submit.js?v=5"></script>
+<!-- キャッシュ切り -->
+<script type="module" src="./js/miniapp-submit.js?v=6"></script>
 </body>
 </html>
