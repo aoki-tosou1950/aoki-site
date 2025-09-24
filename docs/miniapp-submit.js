@@ -19,22 +19,29 @@ const $ = s => document.querySelector(s);
 
 window.addEventListener('DOMContentLoaded', () => {
   const form   = $('#survey-form');
-  const notice = $('#notice');
   if (!form) return;
 
+  const notice = $('#notice');  // 必須
   const submitBtn = form.querySelector('button[type="submit"]');
 
   const show = (msg, ok=true) => {
-    if (!notice) return;
-    notice.textContent = msg;
-    notice.className = `notice ${ok ? 'ok':'ng'}`;
-    notice.style.display = 'block';
+    if (notice) {
+      notice.textContent = msg;
+      notice.className = `notice ${ok ? 'ok':'ng'}`;
+      notice.style.display = 'block';
+    }
+    alert(msg); // 最低限はアラートでも必ず見える
   };
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    // 送信中UI
+    // 必須入力チェック
+    if (!form.checkValidity()) {
+      show('未入力の項目があります。全て入力してください。', false);
+      return;
+    }
+
     if (submitBtn) {
       submitBtn.disabled = true;
       submitBtn.textContent = '送信中…';
@@ -51,14 +58,11 @@ window.addEventListener('DOMContentLoaded', () => {
         createdAt: serverTimestamp()
       });
 
-      // 画面にも通知＋明確なアラート
       show('送信しました。折り返しご連絡いたします。', true);
-      alert('送信完了しました。折り返しご連絡いたします。');
       form.reset();
     } catch (err) {
       console.error('[miniapp] Firestore error', err);
       show('送信に失敗しました。時間をおいて再度お試しください。', false);
-      alert('送信に失敗しました。時間をおいて再度お試しください。');
     } finally {
       if (submitBtn) {
         submitBtn.disabled = false;
